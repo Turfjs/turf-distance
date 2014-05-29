@@ -1,6 +1,5 @@
 //http://en.wikipedia.org/wiki/Haversine_formula
 //http://www.movable-type.co.uk/scripts/latlong.html
-// expects a feature collection of points
 
 module.exports = function(point1, point2, units){
   var coordinates1 = point1.geometry.coordinates
