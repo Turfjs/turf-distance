@@ -7,8 +7,8 @@ module.exports = function(point1, point2, units){
 
   var dLat = toRad(coordinates2[1] - coordinates1[1])
   var dLon = toRad(coordinates2[0] - coordinates1[0])
-  var lat1 = toRad(coordinates1[0])
-  var lat2 = toRad(coordinates2[0])
+  var lat1 = toRad(coordinates1[1])
+  var lat2 = toRad(coordinates2[1])
   var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
           Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2)
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
