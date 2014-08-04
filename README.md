@@ -16,7 +16,7 @@ npm install turf-distance
 |---|---|
 |point1|point feature|
 |point2|point feature|
-|units|'miles' or 'kilometers'|
+|units|'miles', 'kilometers', 'degrees' or 'radians'|
 
 ###Usage
 
