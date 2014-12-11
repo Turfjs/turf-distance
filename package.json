@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/morganherlocker/turf-distance",
   "devDependencies": {
-    "tape": "^2.13.3"
+    "benchmark": "^1.0.0",
+    "tape": "^3.0.3"
   }
 }
