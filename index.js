@@ -1,6 +1,22 @@
 //http://en.wikipedia.org/wiki/Haversine_formula
 //http://www.movable-type.co.uk/scripts/latlong.html
 
+/**
+ * Calculates the distance between two {@link Point} features in degrees,
+ * radians, miles, or kilometers. This uses the [haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
+ * to account for global curvature.
+ *
+ * @module turf/distance
+ * @param {Point} from
+ * @param {Point} to
+ * @param {string} units
+ * @return {number} distance
+ * @example
+ * var point1 = turf.point(-75.343, 39.984)
+ * var point2 = turf.point(-75.534, 39.123)
+ * var units = 'miles' // or 'kilometers', 'degrees', 'radians'
+ * var distance = turf.distance(point1, point2, units)
+ */
 module.exports = function(point1, point2, units){
   var coordinates1 = point1.geometry.coordinates;
   var coordinates2 = point2.geometry.coordinates;
@@ -17,16 +33,16 @@ module.exports = function(point1, point2, units){
   switch(units){
     case 'miles':
       R = 3960;
-      break
+      break;
     case 'kilometers':
       R = 6373;
-      break
+      break;
     case 'degrees':
       R = 57.2957795;
-      break
+      break;
     case 'radians':
       R = 1;
-      break
+      break;
   }
   var distance = R * c;
   return distance;
