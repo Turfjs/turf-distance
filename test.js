@@ -4,7 +4,7 @@ var distance = require('./');
 test('distance', function(t){
   var pt1 = { 
     "type": "Feature",
-    "geometry": {"type": "Point", "coordinates": [-75.4, 39.4]}
+    "geometry": {"type": "Point", "coordinates": [-75.343, 39.984]}
   };
   var pt2 = {
     "type": "Feature",
