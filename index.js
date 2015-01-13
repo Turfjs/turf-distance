@@ -3,7 +3,7 @@
 
 /**
  * Calculates the distance between two {@link Point} features in degrees,
- * radians, miles, or kilometers. This uses the [haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
+ * radians, miles, or kilometers. This uses the [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
  * to account for global curvature.
  *
  * @module turf/distance
