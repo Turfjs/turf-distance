@@ -7,15 +7,17 @@
  * to account for global curvature.
  *
  * @module turf/distance
- * @param {Point} from
- * @param {Point} to
- * @param {string} units
- * @return {number} distance
+ * @param {Point} from origin point
+ * @param {Point} to destination point
+ * @param {String} units can be degrees, radians, miles, or kilometers
+ * @return {Number} distance between the two points
  * @example
- * var point1 = turf.point(-75.343, 39.984)
- * var point2 = turf.point(-75.534, 39.123)
- * var units = 'miles' // or 'kilometers', 'degrees', 'radians'
- * var distance = turf.distance(point1, point2, units)
+ * var point1 = turf.point(-75.343, 39.984);
+ * var point2 = turf.point(-75.534, 39.123);
+ * var units = 'miles';
+ *
+ * var distance = turf.distance(point1, point2, units);
+ * console.log(distance); // 60.37218405837491
  */
 module.exports = function(point1, point2, units){
   var coordinates1 = point1.geometry.coordinates;
