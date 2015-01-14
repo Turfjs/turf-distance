@@ -3,21 +3,22 @@
 
 /**
  * Calculates the distance between two {@link Point} features in degrees,
- * radians, miles, or kilometers. This uses the [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
+ * radians, miles, or kilometers. This uses the
+ * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
  * to account for global curvature.
  *
  * @module turf/distance
  * @param {Point} from origin point
  * @param {Point} to destination point
- * @param {String} units can be degrees, radians, miles, or kilometers
+ * @param {String=kilometers} units can be degrees, radians, miles, or kilometers
  * @return {Number} distance between the two points
  * @example
  * var point1 = turf.point(-75.343, 39.984);
  * var point2 = turf.point(-75.534, 39.123);
  * var units = 'miles';
- *
  * var distance = turf.distance(point1, point2, units);
- * console.log(distance); // 60.37218405837491
+ *
+ * //=distance
  */
 module.exports = function(point1, point2, units){
   var coordinates1 = point1.geometry.coordinates;
@@ -31,7 +32,7 @@ module.exports = function(point1, point2, units){
           Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
-  var R = 0;
+  var R;
   switch(units){
     case 'miles':
       R = 3960;
@@ -45,11 +46,17 @@ module.exports = function(point1, point2, units){
     case 'radians':
       R = 1;
       break;
+    case undefined:
+      R = 6373;
+      break;
+    default:
+      throw new Error('unknown option given to "units"');
   }
+
   var distance = R * c;
   return distance;
-}
+};
 
-function toRad(degree){
+function toRad(degree) {
   return degree * Math.PI / 180;
 }
