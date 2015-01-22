@@ -2,8 +2,9 @@
 //http://www.movable-type.co.uk/scripts/latlong.html
 
 /**
- * Calculates the distance between two {@link Point} features in degrees,
- * radians, miles, or kilometers. This uses the
+ * Takes two {@link Point} features and calculates
+ * the distance between them in degress, radians,
+ * miles, or kilometers. This uses the
  * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
  * to account for global curvature.
  *
@@ -16,6 +17,11 @@
  * var point1 = turf.point([-75.343, 39.984]);
  * var point2 = turf.point([-75.534, 39.123]);
  * var units = 'miles';
+ *
+ * var points = turf.featurecollection([point1, point2]);
+ *
+ * //=points
+ *
  * var distance = turf.distance(point1, point2, units);
  *
  * //=distance
