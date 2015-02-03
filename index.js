@@ -1,3 +1,4 @@
+var invariant = require('turf-invariant');
 //http://en.wikipedia.org/wiki/Haversine_formula
 //http://www.movable-type.co.uk/scripts/latlong.html
 
@@ -9,8 +10,8 @@
  * to account for global curvature.
  *
  * @module turf/distance
- * @param {Point} from origin point
- * @param {Point} to destination point
+ * @param {Feature} from origin point
+ * @param {Feature} to destination point
  * @param {String} [units=kilometers] can be degrees, radians, miles, or kilometers
  * @return {Number} distance between the two points
  * @example
@@ -27,6 +28,8 @@
  * //=distance
  */
 module.exports = function(point1, point2, units){
+  invariant.featureOf(point1, 'Point', 'distance');
+  invariant.featureOf(point2, 'Point', 'distance');
   var coordinates1 = point1.geometry.coordinates;
   var coordinates2 = point2.geometry.coordinates;
 
