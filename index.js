@@ -15,11 +15,28 @@ var invariant = require('turf-invariant');
  * @param {String} [units=kilometers] can be degrees, radians, miles, or kilometers
  * @return {Number} distance between the two points
  * @example
- * var point1 = turf.point([-75.343, 39.984]);
- * var point2 = turf.point([-75.534, 39.123]);
- * var units = 'miles';
+ * var point1 = {
+ *   "type": "Feature",
+ *   "properties": {},
+ *   "geometry": {
+ *     "type": "Point",
+ *     "coordinates": [-75.343, 39.984]
+ *   }
+ * };
+ * var point2 = {
+ *   "type": "Feature",
+ *   "properties": {},
+ *   "geometry": {
+ *     "type": "Point",
+ *     "coordinates": [-75.534, 39.123]
+ *   }
+ * };
+ * var units = "miles";
  *
- * var points = turf.featurecollection([point1, point2]);
+ * var points = {
+ *   "type": "FeatureCollection",
+ *   "features": [point1, point2]
+ * };
  *
  * //=points
  *
