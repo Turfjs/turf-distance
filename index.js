@@ -10,6 +10,7 @@ var invariant = require('turf-invariant');
  * to account for global curvature.
  *
  * @module turf/distance
+ * @category measurement
  * @param {Feature} from origin point
  * @param {Feature} to destination point
  * @param {String} [units=kilometers] can be degrees, radians, miles, or kilometers
