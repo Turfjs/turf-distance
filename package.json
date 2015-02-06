@@ -25,9 +25,9 @@
   "homepage": "https://github.com/Turfjs/turf-distance",
   "devDependencies": {
     "benchmark": "^1.0.0",
-    "tape": "^3.0.3",
+    "tape": "^3.5.0",
     "dox": "^0.6.1",
-    "doxme": "^1.4.2"
+    "doxme": "^1.4.3"
   },
   "dependencies": {
     "turf-invariant": "^1.0.2"
