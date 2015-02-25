@@ -3,16 +3,15 @@ var invariant = require('turf-invariant');
 //http://www.movable-type.co.uk/scripts/latlong.html
 
 /**
- * Takes two {@link Point} features and calculates
- * the distance between them in degress, radians,
+ * Calculates the distance between two points in degress, radians,
  * miles, or kilometers. This uses the
  * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
  * to account for global curvature.
  *
  * @module turf/distance
  * @category measurement
- * @param {Feature} from origin point
- * @param {Feature} to destination point
+ * @param {Feature<Point>} from origin point
+ * @param {Feature<Point>} to destination point
  * @param {String} [units=kilometers] can be degrees, radians, miles, or kilometers
  * @return {Number} distance between the two points
  * @example
