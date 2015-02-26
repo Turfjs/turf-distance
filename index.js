@@ -3,7 +3,7 @@ var invariant = require('turf-invariant');
 //http://www.movable-type.co.uk/scripts/latlong.html
 
 /**
- * Calculates the distance between two points in degress, radians,
+ * Calculates the distance between two {@link Point|points} in degress, radians,
  * miles, or kilometers. This uses the
  * [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula)
  * to account for global curvature.
