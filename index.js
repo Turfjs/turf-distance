@@ -44,7 +44,7 @@ var invariant = require('turf-invariant');
  *
  * //=distance
  */
-module.exports = function(point1, point2, units){
+module.exports = function(point1, point2, units) {
   invariant.featureOf(point1, 'Point', 'distance');
   invariant.featureOf(point2, 'Point', 'distance');
   var coordinates1 = point1.geometry.coordinates;
@@ -59,7 +59,7 @@ module.exports = function(point1, point2, units){
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
   var R;
-  switch(units){
+  switch(units) {
     case 'miles':
       R = 3960;
       break;
