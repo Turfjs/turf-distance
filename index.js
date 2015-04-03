@@ -64,6 +64,7 @@ module.exports = function(point1, point2, units) {
       R = 3960;
       break;
     case 'kilometers':
+    case 'kilometres':
       R = 6373;
       break;
     case 'degrees':
