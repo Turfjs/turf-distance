@@ -82,7 +82,7 @@ module.exports = function(point1, point2, units) {
       throw new Error('unknown option given to "units"');
   }
 
-  var distance = getEarthRadius(coordinates1[1], units) * c;
+  var distance = R * c;
   return distance;
 };
 
