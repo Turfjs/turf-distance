@@ -61,11 +61,11 @@ module.exports = function(point1, point2, units) {
   var R;
   switch(units) {
     case 'miles':
-      R = 3960;
+      R = toMiles(getEarthRadius(coordinates1[1]));
       break;
     case 'kilometers':
     case 'kilometres':
-      R = 6373;
+      R = getEarthRadius(coordinates1[1]) / 1000;
       break;
     case 'degrees':
       R = 57.2957795;
@@ -73,6 +73,8 @@ module.exports = function(point1, point2, units) {
     case 'radians':
       R = 1;
       break;
+    case 'meters':
+      R = getEarthRadius(coordinates1[1]);
     case undefined:
       R = 6373;
       break;
@@ -80,10 +82,25 @@ module.exports = function(point1, point2, units) {
       throw new Error('unknown option given to "units"');
   }
 
-  var distance = R * c;
+  var distance = getEarthRadius(coordinates1[1], units) * c;
   return distance;
 };
 
 function toRad(degree) {
   return degree * Math.PI / 180;
+}
+
+function toMiles(km) {
+  return km * 0.6214;
+}
+
+function getEarthRadius = function(latdeg) {
+  
+	// http://en.wikipedia.org/wiki/Earth_radius
+	var An = 6378137.0 * 6378137.0 * Math.cos(latdeg);
+	var Bn = 6356752.3 * 6356752.3 * Math.sin(latdeg);
+	var Ad = 6378137.0 * Math.cos(latdeg);
+	var Bd = 6356752.3 * Math.sin(latdeg);
+
+	return Math.sqrt((An * An + Bn * Bn) / (Ad * Ad + Bd * Bd));
 }
