@@ -73,8 +73,10 @@ function arrayDistance(coordinates1, coordinates2, R) {
   var dLon = toRad(coordinates2[0] - coordinates1[0]);
   var lat1 = toRad(coordinates1[1]);
   var lat2 = toRad(coordinates2[1]);
-  var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-          Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+  var halfDlatSin = Math.sin(dLat/2);
+  var halfDlonSin = Math.sin(dLon/2);
+  var a = halfDlatSin * halfDlatSin +
+          halfDlonSin * halfDlonSin * Math.cos(lat1) * Math.cos(lat2);
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 
   var distance = R * c;
