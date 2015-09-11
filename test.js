@@ -24,3 +24,21 @@ test('distance', function(t){
 
   t.end();
 });
+
+test('distance sperate parts', function(t){
+  var pt1 = [-75.343, 39.984];
+  var pt2 = [-75.534, 39.123];
+
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR('miles')), 60.37218405837491, 'miles');
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR('kilometers')), 97.15957803131901, 'kilometers');
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR('kilometres')), 97.15957803131901, 'kilometres');
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR('radians')), 0.015245501024842149, 'radians');
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR('degrees')), 0.8735028650863799, 'degrees');
+  t.equal(distance.arrayDistance(pt1, pt2, distance.getR()), 97.15957803131901, 'default=kilometers');
+
+  t.throws(function() {
+      distance.getR('blah');
+  }, 'unknown option given to units');
+
+  t.end();
+});
