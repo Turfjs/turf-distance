@@ -1,3 +1,4 @@
+# DEPRECATED - replaced with [`@turf/distance`](https://github.com/Turfjs/turf/tree/master/packages/turf-distance)
 # turf-distance
 
 [![build status](https://secure.travis-ci.org/Turfjs/turf-distance.png)](http://travis-ci.org/Turfjs/turf-distance)
